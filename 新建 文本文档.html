@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>母亲节快乐</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Microsoft YaHei, sans-serif;
+            background: linear-gradient(135deg, #ffc0cb, #e6e6fa, #fff);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 25px;
+            padding: 40px 30px;
+            max-width: 600px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(255, 105, 180, 0.2);
+            text-align: center;
+        }
+
+        h1 {
+            color: #ff69b4;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .heart {
+            font-size: 2.5rem;
+            margin: 20px 0;
+            animation: beat 1.5s infinite;
+        }
+
+        @keyframes beat {
+            0%,100%{transform:scale(1);}
+            50%{transform:scale(1.1);}
+        }
+
+        .msg {
+            color: #8a2be2;
+            font-size: 1.1rem;
+            line-height: 1.9;
+            text-align: left;
+            margin: 20px 0;
+        }
+
+        .msg p {
+            margin-bottom: 15px;
+            text-indent: 2em;
+        }
+
+        .music {
+            margin-top: 30px;
+        }
+
+        button {
+            background: linear-gradient(135deg, #ff69b4, #da70d6);
+            color: white;
+            border: none;
+            padding: 14px 35px;
+            font-size: 1rem;
+            border-radius: 50px;
+            cursor: pointer;
+        }
+
+        .sign {
+            margin-top: 30px;
+            color: #d8bdd8;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <h1>母亲节快乐</h1>
+        <div class="heart">❤️</div>
+
+        <div class="msg">
+            <p>亲爱的妈妈：</p>
+            <p>小时候，您的怀抱是我最温暖的港湾，牵着您的手，我就什么都不怕。</p>
+            <p>感谢您毫无保留的付出，包容我的所有小脾气，用温柔守护我长大。</p>
+            <p>愿您永远健康、开心、被爱包围。</p>
+            <p>母亲节快乐，我永远爱您！</p>
+        </div>
+
+        <div class="music">
+            <audio id="m" loop>
+                <source src="Mom and daughter.mp3" type="audio/mpeg">
+            </audio>
+            <button onclick="play()">🎵 点击播放音乐</button>
+        </div>
+
+        <div class="sign">—— 永远爱您的孩子</div>
+    </div>
+
+    <script>
+        let a = document.getElementById('m');
+        let p = false;
+        function play() {
+            if (!p) {
+                a.play();
+                document.querySelector('button').innerText = '⏸️ 暂停';
+                p = true;
+            } else {
+                a.pause();
+                document.querySelector('button').innerText = '🎵 点击播放音乐';
+                p = false;
+            }
+        }
+    </script>
+</body>
+</html>
